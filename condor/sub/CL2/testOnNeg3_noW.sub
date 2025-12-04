@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/testOnNeg3_noW.sh
+output     = ../../condor_out/CL2/out/testOnNeg3_noW.out
+error      = ../../condor_out/CL2/err/testOnNeg3_noW.err
+log        = ../../condor_out/CL2/log/testOnNeg3_noW.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

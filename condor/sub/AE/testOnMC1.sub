@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/testOnMC1.sh
+output     = ../../condor_out/AE/out/testOnMC1.out
+error      = ../../condor_out/AE/err/testOnMC1.err
+log        = ../../condor_out/AE/log/testOnMC1.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

@@ -1,0 +1,11 @@
+universe = vanilla
+
+executable = DataMC.sh
+output     = condor_out/DataMC.out
+error      = condor_out/DataMC.err
+log        = condor_out/DataMC.log
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/rankingISS.sh
+output     = ../../condor_out/AE/out/rankingISS.out
+error      = ../../condor_out/AE/err/rankingISS.err
+log        = ../../condor_out/AE/log/rankingISS.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "testmatch"
+RequestCPUs = 5
+queue

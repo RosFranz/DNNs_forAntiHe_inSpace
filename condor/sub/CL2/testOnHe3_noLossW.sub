@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/testOnHe3_noLossW.sh
+output     = ../../condor_out/CL2/out/testOnHe3_noLossW.out
+error      = ../../condor_out/CL2/err/testOnHe3_noLossW.err
+log        = ../../condor_out/CL2/log/testOnHe3_noLossW.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

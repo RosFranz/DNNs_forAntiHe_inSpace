@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/train_ISS.sh
+output     = ../../condor_out/AE/out/train_ISS.out
+error      = ../../condor_out/AE/err/train_ISS.err
+log        = ../../condor_out/AE/log/train_ISS.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

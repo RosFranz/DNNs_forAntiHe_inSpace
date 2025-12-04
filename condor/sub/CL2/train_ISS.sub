@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/train_ISS.sh
+output     = ../../condor_out/CL2/train_ISS.out
+error      = ../../condor_out/CL2/train_ISS.err
+log        = ../../condor_out/CL2/train_ISS.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "testmatch"
+RequestCPUs = 5
+queue

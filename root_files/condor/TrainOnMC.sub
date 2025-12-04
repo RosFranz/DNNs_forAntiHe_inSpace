@@ -1,0 +1,11 @@
+universe = vanilla
+
+executable = TrainOnMC.sh
+output     = condor_out/TrainOnMC.out
+error      = condor_out/TrainOnMC.err
+log        = condor_out/TrainOnMC.log
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

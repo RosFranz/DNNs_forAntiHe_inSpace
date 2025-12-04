@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/testOnElectrons.sh
+output     = ../../condor_out/AE/out/testOnElectrons.out
+error      = ../../condor_out/AE/err/testOnElectrons.err
+log        = ../../condor_out/AE/log/testOnElectrons.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

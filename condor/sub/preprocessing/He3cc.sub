@@ -1,0 +1,12 @@
+universe = vanilla
+
+executable = ../../executables/preprocessing/MakeHe3CC21000h5.sh
+output     = ../../condor_out/preprocessing/out/He3cc.out
+error      = ../../condor_out/preprocessing/err/He3cc.err
+log        = ../../condor_out/preprocessing/log/He3cc.log
+
+getenv     = True
+
++JobFlavour = "workday"
+RequestCPUs = 5
+queue

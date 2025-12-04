@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/testOnISS1_noW.sh
+output     = ../../condor_out/AE/out/testOnISS1_noW.out
+error      = ../../condor_out/AE/err/testOnISS1_noW.err
+log        = ../../condor_out/AE/log/testOnISS1_noW.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

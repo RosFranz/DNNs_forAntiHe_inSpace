@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/testOnNeg_fromISS1.sh
+output     = ../../condor_out/CL2/out/testOnNeg_fromISS1.out
+error      = ../../condor_out/CL2/err/testOnNeg_fromISS1.err
+log        = ../../condor_out/CL2/log/testOnNeg_fromISS1.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

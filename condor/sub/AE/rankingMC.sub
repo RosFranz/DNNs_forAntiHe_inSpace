@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/rankingMC.sh
+output     = ../../condor_out/AE/rankingMC.out
+error      = ../../condor_out/AE/rankingMC.err
+log        = ../../condor_out/AE/rankingMC.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = merge_MC.sh
+output     = condor_out/merge_MC.out
+error      = condor_out/merge_MC.err
+log        = condor_out/merge_MC.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

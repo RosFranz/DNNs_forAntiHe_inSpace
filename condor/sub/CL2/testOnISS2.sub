@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/testOnISS2.sh
+output     = ../../condor_out/CL2/out/testOnISS2.out
+error      = ../../condor_out/CL2/err/testOnISS2.err
+log        = ../../condor_out/CL2/log/testOnISS2.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

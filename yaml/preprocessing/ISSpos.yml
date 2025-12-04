@@ -1,0 +1,19 @@
+g:
+  DEBUG: False
+  #Default paths
+  DATASET_PATH   : /eos/home-f/frrossi/AMS/ams_network/dataset/
+  MODEL_PATH     : /eos/home-f/frrossi/AMS/ams_network/models/dev/
+  VALDIC_PATH    : /eos/home-f/frrossi/AMS/ams_network/val_dic/dev/
+  NEW_FOLDER_PATH: /eos/home-f/frrossi/AMS/output/organized_output/scores/dev/
+
+  USEMASK: True       #Mask missing values in training
+  MYMASKVALUE: -9999
+
+
+PREg:
+  FILE_PATH: '/eos/home-f/frrossi/AMS/output/organized_output/MLDs/'
+  FILE_DATE: '2025_10_27'
+  FILE_NAME: 'Positives'
+  BUILD_MC: False
+  IS_CC: False
+  H5_NAME: 'ISSpos_dic.h5'

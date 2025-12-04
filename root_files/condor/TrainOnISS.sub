@@ -1,0 +1,11 @@
+universe = vanilla
+
+executable = TrainOnISS.sh
+output     = condor_out/TrainOnISS.out
+error      = condor_out/TrainOnISS.err
+log        = condor_out/TrainOnISS.log
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

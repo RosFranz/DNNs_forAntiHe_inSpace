@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = merge_ISS.sh
+output     = condor_out/merge_ISS.out
+error      = condor_out/merge_ISS.err
+log        = condor_out/merge_ISS.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

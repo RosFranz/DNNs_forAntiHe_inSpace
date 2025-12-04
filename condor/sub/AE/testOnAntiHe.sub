@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/testOnAntiHe.sh
+output     = ../../condor_out/AE/out/testOnAntiHe.out
+error      = ../../condor_out/AE/err/testOnAntiHe.err
+log        = ../../condor_out/AE/log/testOnAntiHe.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

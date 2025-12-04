@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/ranking_ISS.sh
+output     = ../../condor_out/CL2/out/ranking_ISS.out
+error      = ../../condor_out/CL2/err/ranking_ISS.err
+log        = ../../condor_out/CL2/log/ranking_ISS.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

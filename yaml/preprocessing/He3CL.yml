@@ -1,0 +1,20 @@
+g:
+  DEBUG: False
+  #Default paths
+  DATASET_PATH   : /eos/home-f/frrossi/AMS/ams_network/dataset/
+  MODEL_PATH     : /eos/home-f/frrossi/AMS/ams_network/models/dev/
+  VALDIC_PATH    : /eos/home-f/frrossi/AMS/ams_network/val_dic/dev/
+  NEW_FOLDER_PATH: /eos/home-f/frrossi/AMS/output/organized_output/scores/dev/
+
+  USEMASK: True       #Mask missing values in training
+  MYMASKVALUE: -9999
+
+
+PREg:
+  FILE_PATH: '/eos/home-f/frrossi/AMS/output/organized_output/MLDs/'
+  FILE_DATE: '2025_10_27'
+  FILE_NAME: 'He3_Positives_21000'
+  BUILD_MC: True
+  IS_CC: False
+  CL_TRAINorVAL: True
+  H5_NAME: 'He3CL_21000.h5'

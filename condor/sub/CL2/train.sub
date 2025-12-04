@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/train.sh
+output     = ../../condor_out/CL2/train.out
+error      = ../../condor_out/CL2/train.err
+log        = ../../condor_out/CL2/train.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "testmatch"
+RequestCPUs = 5
+queue

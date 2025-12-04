@@ -1,0 +1,12 @@
+universe = vanilla
+
+executable = ../../executables/preprocessing/MakeISSnegh5.sh
+output     = ../../condor_out/preprocessing/out/ISSneg.out
+error      = ../../condor_out/preprocessing/err/ISSneg.err
+log        = ../../condor_out/preprocessing/log/ISSneg.log
+
+getenv     = True
+
++JobFlavour = "workday"
+RequestCPUs = 5
+queue

@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = Significance3Det.sh
+output     = condor_out/Significance3.out
+error      = condor_out/Significance3.err
+log        = condor_out/Significance3.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

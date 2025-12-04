@@ -1,0 +1,19 @@
+JOB CL2_trainingISS ../../sub/CL2/trainISS.sub
+
+JOB CL2_rankingISS  ../../sub/CL2/ranking_ISS.sub
+
+JOB CL2_Neg1fromISS ../../sub/CL2/testOnNeg_fromISS1.sub
+JOB CL2_Neg2fromISS ../../sub/CL2/testOnNeg_fromISS2.sub
+JOB CL2_Neg3fromISS ../../sub/CL2/testOnNeg_fromISS3.sub
+
+JOB CL2_testOnMC1  ../../sub/CL2/testOnMC1.sub
+JOB CL2_testOnMC2  ../../sub/CL2/testOnMC2.sub
+JOB CL2_testOnMC3  ../../sub/CL2/testOnMC3.sub
+ 
+SCRIPT PRE CL2_trainingISS  CL2train_ISS.sh 
+SCRIPT POST CL2_trainingISS CL2testOnMC.sh
+
+SCRIPT PRE CL2_rankingISS   CL2ranking_ISS.sh 
+
+PARENT CL2_trainingISS    CHILD CL2_rankingISS    CL2_testOnMC1     CL2_testOnMC2    CL2_testOnMC3
+PARENT CL2_trainingISS    CHILD CL2_Neg1fromISS   CL2_Neg2fromISS   CL2_Neg3fromISS

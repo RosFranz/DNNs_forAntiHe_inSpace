@@ -1,0 +1,16 @@
+
+JOB AE_trainingISS ../../sub/AE/train_ISS.sub
+JOB AE_ValTestISS  ../../sub/AE/ValTest_ISS.sub
+
+JOB AE_rankingISS  ../../sub/AE/ranking_ISS.sub
+
+JOB AE_testOnMC1  ../../sub/AE/testOnMC1.sub
+JOB AE_testOnMC2  ../../sub/AE/testOnMC2.sub
+
+ 
+SCRIPT PRE  AE_trainingISS AEtrain_ISS.sh
+SCRIPT POST AE_trainingISS AEtestOnMC.sh
+
+SCRIPT PRE AE_rankingISS AEranking_ISS.sh
+
+PARENT AE_trainingISS CHILD AE_ValTestISS AE_rankingISS AE_testOnMC1 AE_testOnMC2

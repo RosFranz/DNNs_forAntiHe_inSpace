@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/test2.sh
+output     = ../../condor_out/AE/test2.out
+error      = ../../condor_out/AE/test2.err
+log        = ../../condor_out/AE/test2.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "testmatch"
+RequestCPUs = 5
+queue

@@ -1,0 +1,11 @@
+universe = vanilla
+
+executable = execute.sh
+output     = condor_out/toCondor.out
+error      = condor_out/toCondor.err
+log        = condor_out/toCondor.log
+
+getenv     = True
++JobFlavour = "longlunch"
+RequestCPUs = 2
+queue

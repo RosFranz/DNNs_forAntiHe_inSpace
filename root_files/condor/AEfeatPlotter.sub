@@ -1,0 +1,11 @@
+universe = vanilla
+
+executable = AEfeatPlotter.sh
+output     = condor_out/AEplotter.out
+error      = condor_out/AEplotter.err
+log        = condor_out/AEplotter.log
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

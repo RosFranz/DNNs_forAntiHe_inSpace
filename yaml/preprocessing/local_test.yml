@@ -1,0 +1,26 @@
+g:
+  DEBUG: True
+  #Default paths
+  DATASET_PATH    : /home/franz/AMS/ams_network/dataset/
+  MODEL_PATH      : /home/franz/AMS/ams_network/models/
+  VALDIC_PATH     : /home/franz/AMS/ams_network/val_dic/
+  NEW_FOLDER_PATH : /home/franz/AMS/output/organized_output/scores/
+
+  MC_NEG_DATASET: -1  #-1 for no MC, 0->label5, 1->label10, 2->label15
+  TRAIN_ON_ISS: True #Train on ISS data
+  IS_SIGNAL: True     #True to train on R>0 samples
+  MIN_LOSS: 1.e+8     #Starting value to save on the best epoch  
+
+  USEMASK: True       #Mask missing values in training
+  MYMASKVALUE: -9999
+
+  IS_OLD_RESULT: False  #Reproduce old results
+  OLD_RES: 20_02_2025   #CL2 and AE
+
+PREg:
+  FILE_PATH: '/home/franz/AMS/output/organized_output/MLDs/'
+  FILE_DATE: '2025_02_26'
+  FILE_NAME: 'Positive'
+  BUILD_MC: True
+  IS_CC: False
+  H5_NAME: 'FirstTest.h5'

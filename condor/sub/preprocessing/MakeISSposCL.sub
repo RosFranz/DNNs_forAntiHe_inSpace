@@ -1,0 +1,12 @@
+universe = vanilla
+
+executable = ../../executables/preprocessing/MakeISSposCLh5.sh
+output     = ../../condor_out/preprocessing/out/ISSposCL.out
+error      = ../../condor_out/preprocessing/err/ISSposCL.err
+log        = ../../condor_out/preprocessing/log/ISSposCL.log
+
+getenv     = True
+
++JobFlavour = "workday"
+RequestCPUs = 5
+queue

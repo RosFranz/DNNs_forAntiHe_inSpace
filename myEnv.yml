@@ -1,0 +1,7 @@
+name: AntiHe
+channels:
+  - defaults
+dependencies:
+  - python=3.10.15
+  - ipykernel
+prefix: /afs/cern.ch/user/f/frrossi/miniconda3/envs

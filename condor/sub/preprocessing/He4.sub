@@ -1,0 +1,12 @@
+universe = vanilla
+
+executable = ../../executables/preprocessing/MakeHe4h5.sh
+output     = ../../condor_out/preprocessing/out/He4.out
+error      = ../../condor_out/preprocessing/err/He4.err
+log        = ../../condor_out/preprocessing/log/He4.log
+
+getenv     = True
+
++JobFlavour = "workday"
+RequestCPUs = 5
+queue

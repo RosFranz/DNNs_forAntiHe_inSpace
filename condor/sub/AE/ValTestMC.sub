@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/AE/ValTestMC.sh
+output     = ../../condor_out/AE/out/ValTestMC.out
+error      = ../../condor_out/AE/err/ValTestMC.err
+log        = ../../condor_out/AE/log/ValTestMC.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

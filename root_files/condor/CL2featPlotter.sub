@@ -1,0 +1,11 @@
+universe = vanilla
+
+executable = CL2featPlotter.sh
+output     = condor_out/CL2plotter.out
+error      = condor_out/CL2plotter.err
+log        = condor_out/CL2plotter.log
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

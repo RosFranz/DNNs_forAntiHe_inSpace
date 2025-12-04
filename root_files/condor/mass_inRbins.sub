@@ -1,0 +1,11 @@
+universe = vanilla
+
+executable = mass_inRbins.sh
+output     = condor_out/mass_inRbins.out
+error      = condor_out/mass_inRbins.err
+log        = condor_out/mass_inRbins.log
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue

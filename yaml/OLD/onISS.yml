@@ -1,0 +1,64 @@
+g:
+  DEBUG: False
+  #Default paths
+  DATASET_PATH   : /eos/home-f/frrossi/AMS/ams_network/dataset/
+  MODEL_PATH     : /eos/home-f/frrossi/AMS/ams_network/models/dev/
+  VALDIC_PATH    : /eos/home-f/frrossi/AMS/ams_network/val_dic/dev/
+  NEW_FOLDER_PATH: /eos/home-f/frrossi/AMS/output/organized_output/scores/dev/
+
+  MC_NEG_DATASET: -1  #-1 for no MC, 0->label5, 1->label10, 2->label15
+  TRAIN_ON_ISS: True #Train on ISS data
+  IS_SIGNAL: True     #True to train on R>0 samples
+  MIN_LOSS: 1.e+8     #Starting value to save on the best epoch  
+
+  USEMASK: True       #Mask missing values in training
+  MYMASKVALUE: -9999
+
+  IS_OLD_RESULT: False  #Reproduce old results
+  OLD_RES: 20_02_2025   #CL2 and AE
+
+g_CL2:
+  #===> INPUT features
+  CL2_COLUMNS: ['TRK_TrackResidualL2_Y', 'TRK_TrackResidualL3_Y', 'TRK_TrackResidualL4_Y',
+                'TRK_TrackResidualL5_Y', 'TRK_TrackResidualL6_Y', 'TRK_TrackResidualL7_Y', 
+                'TRK_TrackResidualL3_X', 'TRK_TrackResidualL5_X', 'TRK_TrackResidualL6_X',
+                'InnerHit',              'SigmaInnerL1',          
+                'totPE_Uncorr_rich',     'charge2_rich',          'ringPMTs2_rich',
+                'TRK_MAXchXYonTrackPlane1', 'TRK_MAXchXYonTrackPlane2', 'TRK_MAXchXYonTrackPlane3', 'TRK_MAXchXYonTrackPlane4',
+                'TRK_MINchXYonTrackPlane1', 'TRK_MINchXYonTrackPlane2', 'TRK_MINchXYonTrackPlane3', 'TRK_MINchXYonTrackPlane4']
+  # ===> Several settings
+  TEST_FRACTION: 0.3    #fraction for the validation set
+  CL2_LOSSWEIGHTS: True #Use MC weights on the training loss
+  # ===> AE model parameters
+  CL2_SEED: 30        #Seed for reproducibility
+  CL2_LAYERS: [47,31] #First layer = len(AE_COLUMNS) hard-coded in utils.config.py
+  CL2_LR: 1.e-2
+  DROPOUT: 0.
+  CL2_BATCH_SIZE: 2.e+5 #Hard-coded to int in utils.config.py
+  CL2_EPOCHS: 70
+  
+g_AE:
+  #===> INPUT features
+  AE_COLUMNS: ['SigmaInnerL1',          'SigmaUpLow',
+              'TRK_TrackResidualL2_Y', 'TRK_TrackResidualL3_Y', 'TRK_TrackResidualL4_Y',
+              'TRK_TrackResidualL5_Y', 'TRK_TrackResidualL6_Y', 'TRK_TrackResidualL7_Y', 
+              'TRK_TrackResidualL8_Y',
+              'TRK_TrackResidualL3_X', 'TRK_TrackResidualL5_X', 'TRK_TrackResidualL7_X',
+              'TRK_TrackResidualL8_X',
+              'TRK_NormEdep2L5_XY',    'TRK_NormEdep2L6_XY',    'TRK_NormEdep2L7_XY',
+              'TRK_NormEdep2L8_XY',
+              'InnerHit',      
+              'ACC_AntiCounter', 
+              'TOF_OnTimeClusterL3',   'TOF_OnTimeClusterL4',
+              'TRK_MAXchXYonTrackPlane1', 'TRK_MAXchXYonTrackPlane2', 'TRK_MAXchXYonTrackPlane3', 'TRK_MAXchXYonTrackPlane4',
+              'TRK_MINchXYonTrackPlane1', 'TRK_MINchXYonTrackPlane2', 'TRK_MINchXYonTrackPlane3', 'TRK_MINchXYonTrackPlane4']
+  # ===> Several settings
+  TEST_FRACTION:  0.3     #fraction for the validation set
+  SWITCH:         False   #Invert training and validation set
+  AE_LOSSWEIGHTS: True    #Use MC weights on the training loss
+  # ===> AE model parameters
+  AE_SEED:   10          #Seed for reproducibility
+  AE_LAYERS: [14, 7, 14] #First and last layer = len(AE_COLUMNS) hard-coded in utils.config.py
+  AE_LR  :   5.e-4
+  AE_BATCH_SIZE: 5.e+5   #Hard-coded to int in utils.config.py
+  AE_EPOCHS: 70

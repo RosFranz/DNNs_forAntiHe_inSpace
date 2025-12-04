@@ -1,0 +1,14 @@
+universe = vanilla
+
+executable = ../../executables/CL2/testOnElectrons_noLossW.sh
+output     = ../../condor_out/CL2/out/testOnElectrons_noLossW.out
+error      = ../../condor_out/CL2/err/testOnElectrons_noLossW.err
+log        = ../../condor_out/CL2/log/testOnElectrons_noLossW.log
+
+stream_output = true
+stream_error = true
+
+getenv     = True
++JobFlavour = "tomorrow"
+RequestCPUs = 5
+queue
