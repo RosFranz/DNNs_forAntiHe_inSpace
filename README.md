@@ -81,12 +81,13 @@ Set `USEMASK = True` and `MYMASKVALUE = -9999` in `globals.py` to enable.
 ```bash
 conda env create -f environment_full.yml
 conda activate <env-name>
+```
 
-Requires access to AMS-02 ROOT files (not distributed here) and, for cluster
-jobs, a working HTCondor installation with EOS storage.
+Requires access to AMS-02 ROOT files (not distributed here) and, for cluster jobs, a working HTCondor installation with EOS storage.
 
 Running locally (small scale)
 
+```bash
 # 1. Convert ROOT to HDF5
 python preprocessing/TreeToH5.py --config configs/preprocess.json
 
@@ -97,22 +98,28 @@ python train/AE_train.py  --config configs/ae.json
 # 3. Evaluate
 python evaluate/CL2_onMC.py --config configs/cl2.json
 python evaluate/AE_onMC.py  --config configs/ae.json
+```
 
 Running on CERN cluster (full scale)
 
+```bash
 cd condor/starting_scripts
 bash ProduceDag.sh
 condor_submit_dag ../dag/<workflow>.dag
+```
 
 Configuration
 All hyperparameters and paths live in globals.py. For experiment variants,
 pass a JSON or YAML override with --config:
 
+```bash
 {
   "learning_rate": 5e-4,
   "epochs": 100,
   "layers": [10, 5, 10, 28]
 }
+```
+
 Values in the config file override the corresponding globals.py defaults.
 
 Feature ranking
