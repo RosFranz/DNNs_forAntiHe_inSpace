@@ -4,7 +4,7 @@ from globals import g
 # Symmetric Auto encoder model definition
 class AEsym(nn.Module):
     '''
-    A AE model with customizable layers and nodes
+    Autoencoder symmetric model with customizable layers and nodes
     '''
     def __init__(self, input_size, layers):
         super(AE, self).__init__()
@@ -47,7 +47,7 @@ class AEsym(nn.Module):
 # Arbitrary AE
 class AE(nn.Module):
     '''
-    A AE model with customizable layers and nodes
+    Autoencoder (even asymettric) model with customizable layers and nodes
     '''
     def __init__(self, input_size, layers):
         super(AE, self).__init__()
@@ -71,6 +71,7 @@ class AE(nn.Module):
         return self.EncDec(x)
 
 class maskedLinear(nn.Module):
+    """Masked linear layer."""
     def __init__(self, in_features, out_features, mask_value=g.MYMASKVALUE):
         super().__init__()
         self.linear = nn.Linear(in_features, out_features)
@@ -85,7 +86,7 @@ class maskedLinear(nn.Module):
 # Arbitrary masked AE
 class maskedAE(nn.Module):
     '''
-    A masked AE model with customizable layers and nodes
+    Masked autoencoder model with customizable layers and nodes
     '''
     def __init__(self, input_size:int, layers:list, mask_value:int=g.MYMASKVALUE):
         super(maskedAE, self).__init__()

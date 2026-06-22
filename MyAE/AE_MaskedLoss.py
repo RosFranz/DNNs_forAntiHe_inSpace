@@ -3,6 +3,7 @@ import torch.nn as nn
 from globals import g
 
 class MaskedMSELoss(nn.Module):
+    """Maksed MSE loss."""
     def __init__(self, mask_value=g.MYMASKVALUE):
         super().__init__()
         self.maskValue = mask_value

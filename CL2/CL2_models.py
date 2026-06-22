@@ -4,7 +4,7 @@ from globals import g
 ## Neural network model definition
 class NeuralNet(nn.Module):
     '''
-    A DL model with customizable layers and nodes for multi-class (4) classification.
+    A Classifier model with customizable layers and nodes
     '''
     def __init__(self, input_size, layers, drop_prob=0.1):
         super(NeuralNet, self).__init__()
@@ -28,6 +28,7 @@ class NeuralNet(nn.Module):
     
 ##Custom masked layers
 class maskedLinear(nn.Module):
+    """Masked linear layer."""
     def __init__(self, in_features, out_features, mask_value=g.MYMASKVALUE):
         super().__init__()
         self.linear = nn.Linear(in_features, out_features)
@@ -42,7 +43,7 @@ class maskedLinear(nn.Module):
 ## Masked Neural network model definition
 class maskedNeuralNet(nn.Module):
     '''
-    A DL model with masked layers for binary classification.
+    A Classifier model with masked layers for binary classification.
     '''
     def __init__(self, input_size, layers, drop_prob=0.1, mask_value=g.MYMASKVALUE):
         super(maskedNeuralNet, self).__init__()

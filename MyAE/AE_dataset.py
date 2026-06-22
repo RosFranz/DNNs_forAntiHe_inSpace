@@ -2,6 +2,7 @@ from torch.utils.data import Dataset
 from globals import g
 
 class AEdic:
+    """Autoencoder dictionary"""
     def Initialize(inDIC=None):
         if g.TRAIN_ON_ISS:
             inDIC = {

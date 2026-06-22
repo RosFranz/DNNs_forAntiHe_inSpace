@@ -6,6 +6,7 @@ import gc
 from globals import g, PREg
 
 class h5Manager:
+    """Manager for .h5 files, masking, conversion to dataframe and dictionary."""
     def __init__(
             self,
             in_path:str=None,

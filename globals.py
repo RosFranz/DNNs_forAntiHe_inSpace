@@ -1,5 +1,6 @@
 #Global info used in prepocessing, training, validation and testing 
 class Config_g:
+    """Paths, masking options and output names."""
     #Debug flag
     DEBUG = False
     #Some default path
@@ -38,6 +39,7 @@ g = Config_g()
 
 #CL2 info used in training, validation and testing 
 class Config_CL2:
+    """Classifier hyperparameters and input feature list."""
     CL2_COLUMNS = ['TRK_TrackResidualL2_Y', 'TRK_TrackResidualL3_Y', 'TRK_TrackResidualL4_Y',
                     'TRK_TrackResidualL5_Y', 'TRK_TrackResidualL6_Y', 'TRK_TrackResidualL7_Y', 
                     'TRK_TrackResidualL3_X', 'TRK_TrackResidualL5_X', 'TRK_TrackResidualL6_X',
@@ -75,6 +77,7 @@ g_CL2 = Config_CL2()
 
 #AE info used in training, validation and testing 
 class Config_AE:
+    """Autoencoder hyperparameters and input feature list."""
     AE_COLUMNS = ['SigmaInnerL1',          'SigmaUpLow',
                    'TRK_TrackResidualL2_Y', 'TRK_TrackResidualL3_Y', 'TRK_TrackResidualL4_Y',
                    'TRK_TrackResidualL5_Y', 'TRK_TrackResidualL6_Y', 'TRK_TrackResidualL7_Y', 
@@ -117,6 +120,7 @@ g_AE = Config_AE()
 
 #Prepocessing info used to build .h5 file from root tress
 class Config_Pre_g:
+    """#Prepocessing info used to build .h5 from .root files"""
     if g.DEBUG:
         FILE_PATH       = '/home/franz/AMS/output/organized_output/MLDs/'
         FILE_DATE       = '2025_02_26'

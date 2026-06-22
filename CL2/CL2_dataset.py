@@ -2,6 +2,7 @@ from torch.utils.data import Dataset
 from globals import g
 
 class CL2dic:
+    """Classifier dictionary"""
     def Initialize(inDIC:dict=None):
         if g.TRAIN_ON_ISS:
             inDIC = {
@@ -24,7 +25,7 @@ class CL2dic:
 
 class myDataset(Dataset):
     '''
-    a dataset loader 
+    a dataset loader for classifier with labels
     '''
     def __init__(self, X, y, orig_idx, weights=None):
         self.X = X
@@ -42,7 +43,7 @@ class myDataset(Dataset):
 #For ISS-data
 class myNoLabel_Dataset(Dataset):
     '''
-    a dataset loader
+    a dataset loader without labels
     '''
     def __init__(self, X):
         self.X = X

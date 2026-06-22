@@ -3,8 +3,9 @@ from sklearn.base import TransformerMixin
 from utils import h5Manager
 from globals import g
 
-# Custom class for a masked standard transform
+
 class MaskedStandardScaler(TransformerMixin):
+    """Custom masked standard scaler"""
     def __init__(self, mask_value=g.MYMASKVALUE):
         self.mask_value = mask_value
         self.mean_ = None
