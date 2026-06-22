@@ -1,34 +1,3 @@
-
-## DNNs for anti-helium searches in CRs
-A DNN for a classification task and an autoencoder for anomaly detection
-
-
-
-
-## Usage
-### Preprocessing
-
-
-### Training, validation and test
-
-
-### Analysis
-The analysis and the plotting are carried out in the /root_files/ folder. Here, many root macros are used for different purposes. For example, the independence hypothesis is confirmed through the root_files/EfficiencyCheck.cc.
-The final results are an exclusion limit on the ratio of anti-He/He nuclei as a function of the kinetic energy per nucleon. 
-Some studies on the confidence interval of the true anti-He rate are performed, although not available here. 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # DNNs for Anti-Helium Searches in Space
 
 Deep neural networks for anti-helium nucleus searches using AMS-02 data from
@@ -88,6 +57,12 @@ ROOT files (AMS-02)
 The .py files contained in train/ and evaluate/ receive as input a .yaml file, contained in yaml/. 
 All the pipelines are handled through the HTCondor dagman. Each network (classifier or autoencoder) has a single bash script that takes care of everything. For the autoencoders, the script is condor/starting_scripts/AE/ProduceDag.sh; whilst for the classifiers, it is condor/starting_scripts/CL2/ProduceDag.sh. 
 The outputs are stored as ROOT TTrees. 
+
+
+The analysis and the plotting are carried out in the /root_files/ folder.
+For example, the independence hypothesis is confirmed through the root_files/EfficiencyCheck.cc.
+The final results are an exclusion limit on the ratio of anti-He/He nuclei as a function of the kinetic energy per nucleon. 
+Some studies on the confidence interval of the true anti-He rate are performed, although not available here. 
 
 
 ## Missing data handling
