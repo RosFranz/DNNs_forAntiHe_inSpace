@@ -11,6 +11,8 @@ import gc
 import datetime
 import sys
 
+sys.path.append(str(Path(__file__).parent.parent))
+
 from utils import override
 from globals import g, g_AE
 from scaler import MaskedStandardScaler
